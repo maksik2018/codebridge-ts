@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { FcManager } from "react-icons/fc";
+import { FcBusinesswoman } from "react-icons/fc";
 import s from "./CastItem.module.css";
 
 function CastItem({ item: { name, character, profile_path } }) {
@@ -14,7 +14,7 @@ function CastItem({ item: { name, character, profile_path } }) {
         />
       ) :
         (
-        <FcManager size="100" />
+        <FcBusinesswoman size="150" />
       )
       }
       <p className={s.name}>{name}</p>

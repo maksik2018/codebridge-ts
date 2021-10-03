@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import s from "./MovieDetailsCard.module.css";
 
 function MovieDetailsCard({
-  info: { poster_path, original_title, vote_average, overview, genres },
+  info: { poster_path, title, vote_average, overview, genres },
 }) {
   return (
     <div className={s.card}>
@@ -13,7 +13,7 @@ function MovieDetailsCard({
         alt=""
       />
       <div className={s.info}>
-        <h2>{original_title}</h2>
+        <h2>{title}</h2>
         <p>Vote average: {vote_average}</p>
         <h3>Overview</h3>
         <p>{overview}</p>
@@ -31,7 +31,7 @@ function MovieDetailsCard({
 }
 MovieDetailsCard.propTypes = {
   poster_path: PropTypes.string,
-  original_title: PropTypes.string,
+  title: PropTypes.string,
   vote_average: PropTypes.number,
   overview: PropTypes.string,
   genres: PropTypes.array,

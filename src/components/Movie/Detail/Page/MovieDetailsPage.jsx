@@ -1,17 +1,18 @@
 import React from "react";
-import { FcLeft } from "react-icons/fc";
+import { FcHome } from "react-icons/fc";
 import { useState, useEffect } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 import { getMovieDetails } from "../../../../services/FetchMovies-API";
 import { MovieDetailsCard } from "../../../Movie";
 import s from "./MovieDetailsPage.module.css";
 import AdditionalInfo from "../../AdditionalInfo/AdditionalInfo";
 import Loading from "../../../Loader/Loader";
 
-function MovieDetailsPage({ match }) {
+function MovieDetailsPage() {
   const [info, setInfo] = useState(null);
   const history = useHistory();
   const location = useLocation();
+  const { id } = useParams();
   // console.log({ ...location.state });
 
 
@@ -21,9 +22,9 @@ function MovieDetailsPage({ match }) {
       setInfo(data);
     };
 
-    getInfo(match.params.id);
-  }, [match.params.id]);
-
+    getInfo(id);
+  }, [id]);
+  
   const handleGoHome = () => {
     history.push(location.state?.from ? location.state.from : "/");
   };
@@ -34,7 +35,7 @@ function MovieDetailsPage({ match }) {
       {info && (
         <>
           <button className={s.btn} onClick={handleGoHome}>
-            <FcLeft size="20" />
+            <FcHome size="20" />
             Go Home
           </button>
           <MovieDetailsCard info={info} />
@@ -50,16 +51,20 @@ export default MovieDetailsPage;
 
 //тоже самое, но тут возврат по кнопке не на home, а на шаг назад.//
 // import React from "react";
-// import { FcLeft } from "react-icons/fc";
+// import { FcHome } from "react-icons/fc";
 // import { useState, useEffect } from "react";
+// import { useHistory,useParams } from "react-router-dom";
 // import { getMovieDetails } from "../../../../services/FetchMovies-API";
 // import { MovieDetailsCard } from "../../../Movie";
 // import s from "./MovieDetailsPage.module.css";
 // import AdditionalInfo from "../../AdditionalInfo/AdditionalInfo";
 // import Loading from "../../../Loader/Loader";
 
-// function MovieDetailsPage({ match, history }) {
-//   const [info, setInfo] = useState(null);
+// function MovieDetailsPage() {
+//    const [info, setInfo] = useState(null);
+//   const history = useHistory();
+//   // const location = useLocation();
+//   const { id } = useParams();
 
 //   useEffect(() => {
 //     const getInfo = async (id) => {
@@ -67,8 +72,8 @@ export default MovieDetailsPage;
 //       setInfo(data);
 //     };
 
-//     getInfo(match.params.id);
-//   }, [match.params.id]);
+//     getInfo(id);
+//   }, [id]);
 
 //   const handleGoBackButton = () => {
 //     history.goBack();
@@ -80,7 +85,7 @@ export default MovieDetailsPage;
 //       {info && (
 //         <>
 //           <button className={s.btn} onClick={handleGoBackButton}>
-//             <FcLeft size="20" />
+//             <FcHome size="20" />
 //             Go back
 //           </button>
 //           <MovieDetailsCard info={info} />
