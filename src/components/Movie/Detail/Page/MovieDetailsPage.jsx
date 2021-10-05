@@ -1,7 +1,9 @@
+//тоже самое, но тут возврат по кнопке не на home, а на шаг назад.//
 import React from "react";
-import { FcHome } from "react-icons/fc";
+// import { FcHome } from "react-icons/fc";
+import { BiArrowBack } from "react-icons/bi";
 import { useState, useEffect } from "react";
-import { useHistory, useLocation, useParams } from "react-router-dom";
+import { useHistory,useParams } from "react-router-dom";
 import { getMovieDetails } from "../../../../services/FetchMovies-API";
 import { MovieDetailsCard } from "../../../Movie";
 import s from "./MovieDetailsPage.module.css";
@@ -9,12 +11,10 @@ import AdditionalInfo from "../../AdditionalInfo/AdditionalInfo";
 import Loading from "../../../Loader/Loader";
 
 function MovieDetailsPage() {
-  const [info, setInfo] = useState(null);
+   const [info, setInfo] = useState(null);
   const history = useHistory();
-  const location = useLocation();
+  // const location = useLocation();
   const { id } = useParams();
-  // console.log({ ...location.state });
-
 
   useEffect(() => {
     const getInfo = async (id) => {
@@ -24,9 +24,9 @@ function MovieDetailsPage() {
 
     getInfo(id);
   }, [id]);
-  
-  const handleGoHome = () => {
-    history.push(location.state?.from ? location.state.from : "/");
+
+  const handleGoBackButton = () => {
+    history.goBack();
   };
 
   return (
@@ -34,9 +34,9 @@ function MovieDetailsPage() {
       {!info && <Loading />}
       {info && (
         <>
-          <button className={s.btn} onClick={handleGoHome}>
-            <FcHome size="20" />
-            Go Home
+          <button className={s.btn} onClick={handleGoBackButton}>
+            <BiArrowBack size="20" />
+            Go back
           </button>
           <MovieDetailsCard info={info} />
           <AdditionalInfo id={info.id} />
@@ -49,11 +49,12 @@ function MovieDetailsPage() {
 export default MovieDetailsPage;
 
 
-//тоже самое, но тут возврат по кнопке не на home, а на шаг назад.//
+//тоже самое, но тут возврат по кнопке home, а не на шаг назад.//
+
 // import React from "react";
 // import { FcHome } from "react-icons/fc";
 // import { useState, useEffect } from "react";
-// import { useHistory,useParams } from "react-router-dom";
+// import { useHistory, useLocation, useParams } from "react-router-dom";
 // import { getMovieDetails } from "../../../../services/FetchMovies-API";
 // import { MovieDetailsCard } from "../../../Movie";
 // import s from "./MovieDetailsPage.module.css";
@@ -61,10 +62,12 @@ export default MovieDetailsPage;
 // import Loading from "../../../Loader/Loader";
 
 // function MovieDetailsPage() {
-//    const [info, setInfo] = useState(null);
+//   const [info, setInfo] = useState(null);
 //   const history = useHistory();
-//   // const location = useLocation();
+//   const location = useLocation();
 //   const { id } = useParams();
+//   // console.log({ ...location.state });
+
 
 //   useEffect(() => {
 //     const getInfo = async (id) => {
@@ -74,9 +77,10 @@ export default MovieDetailsPage;
 
 //     getInfo(id);
 //   }, [id]);
-
-//   const handleGoBackButton = () => {
-//     history.goBack();
+  
+//   const handleGoHome = () => {
+//     history.push(location.state?.from ? location.state.from : "/");
+    
 //   };
 
 //   return (
@@ -84,9 +88,9 @@ export default MovieDetailsPage;
 //       {!info && <Loading />}
 //       {info && (
 //         <>
-//           <button className={s.btn} onClick={handleGoBackButton}>
+//           <button className={s.btn} onClick={handleGoHome}>
 //             <FcHome size="20" />
-//             Go back
+//             Back to Home
 //           </button>
 //           <MovieDetailsCard info={info} />
 //           <AdditionalInfo id={info.id} />

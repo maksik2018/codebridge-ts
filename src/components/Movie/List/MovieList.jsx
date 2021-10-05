@@ -13,6 +13,7 @@ function MovieList({ items }) {
       {items.map((item) => (
         <MovieItem key={item.id} item={item} />
       ))}
+        
     </ul>
   );
 }
