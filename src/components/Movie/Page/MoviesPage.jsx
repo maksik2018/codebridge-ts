@@ -50,36 +50,6 @@ function MoviesPage() {
   );
 }
 
-// const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const query = e.target.elements.searchValue.value;
-//     history.push({
-//       ...location,
-//       search: `query=${query}`,
-//     });
-//     setValue(query);
-//   };
-
-//   return (
-//     <>
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           placeholder="type to search movies..."
-//           className={styles.input}
-//           name="searchValue"
-//           type="text"
-//           autoComplete="off"
-//         ></input>
-//         <button className={styles.btn} type="submit">
-//           {/* <HiSearch size={25} color="darkred" /> */}
-//         </button>
-//       </form>
-//       {movies && <MovieList movies={movies} />}
-      
-//     </>
-//   );
-// }
-
 
 export default MoviesPage;
 
