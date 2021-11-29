@@ -25,3 +25,16 @@ h6 {
   margin: 0;
 }
 
+.material-icons-outlined {
+  position: absolute;
+  top: 105px;
+  left: 40px;
+}
+/* @font-face {
+  font-family: 'MyFont';
+  src: local('MyFont'), url(./fonts/MyFont.woff) format('woff');
+} */
+
+
+
+

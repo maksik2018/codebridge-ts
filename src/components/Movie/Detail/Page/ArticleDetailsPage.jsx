@@ -1,26 +1,22 @@
-//тоже самое, но тут возврат по кнопке не на home, а на шаг назад.//
 import React from "react";
-// import { FcHome } from "react-icons/fc";
 import { BiArrowBack } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { useHistory,useParams } from "react-router-dom";
-import { getMovieDetails } from "../../../../services/FetchMovies-API";
-import { MovieDetailsCard } from "../../../Movie";
-import s from "./MovieDetailsPage.module.css";
-import AdditionalInfo from "../../AdditionalInfo/AdditionalInfo";
+import { getArticleDetails } from "../../../../services/FetchArticles-API";
+import { ArticleDetailsCard } from "../..";
+import s from "./ArticleDetailsPage.module.css";
 import Loading from "../../../Loader/Loader";
 
-function MovieDetailsPage() {
+function ArticleDetailsPage() {
    const [info, setInfo] = useState(null);
   const history = useHistory();
-  // const location = useLocation();
   const { id } = useParams();
 
   useEffect(() => {
     const getInfo = async (id) => {
-      const data = await (await getMovieDetails(id)).data;
+      const data = await (await getArticleDetails(id)).data;
       setInfo(data);
-    };
+          };
 
     getInfo(id);
   }, [id]);
@@ -34,19 +30,19 @@ function MovieDetailsPage() {
       {!info && <Loading />}
       {info && (
         <>
+          <ArticleDetailsCard info={info} />
           <button className={s.btn} onClick={handleGoBackButton}>
             <BiArrowBack size="20" />
-            Go back
+            back to Homepage
           </button>
-          <MovieDetailsCard info={info} />
-          <AdditionalInfo id={info.id} />
-        </>
+          
+          </>
       )}
     </>
   );
 }
 
-export default MovieDetailsPage;
+export default ArticleDetailsPage;
 
 
 //тоже самое, но тут возврат по кнопке home, а не на шаг назад.//

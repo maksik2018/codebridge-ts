@@ -1,0 +1,81 @@
+.poster {
+  display: inline-block;
+  width: 400px;
+  height: 217px;
+  object-fit: cover;
+}
+
+.wrapper {
+    display: block;
+    width: 400px;
+    height: 530px;
+
+}
+
+.item {
+ flex-basis: calc(100% / 3 - 60px);
+  margin-top: 30px; 
+  margin-left: 45px;
+}
+
+.link {
+  display: flex;
+  padding-top: 30px;
+}
+
+.overlay {
+  width: 400px;
+}
+
+.date {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.title {
+  display: block;
+  margin-top: 24px;
+   font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29.26px;
+   }
+
+
+.zagolovok {
+  margin-top: 20px;
+height: 45px;
+overflow: hidden;
+text-overflow: ellipsis;
+font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.dateWrapper{
+  margin-top: 25px;
+  margin-left: 26px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(234, 234, 234, 1);
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+
+ 
+}
+.icon {
+  margin-right: 9px;
+  
+}
+
+.readMore {
+  font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  
+}
+

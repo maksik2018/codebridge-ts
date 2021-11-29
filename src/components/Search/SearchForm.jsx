@@ -1,26 +1,26 @@
 import React from "react";
-import { PropTypes } from "prop-types";
+import 'material-icons/iconfont/material-icons.css'
 import s from "./SearchForm.module.css";
 
-function SearchForm({ onSubmit }) {
-  const formSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(e.target.searchStr.value);
-    console.log(onSubmit);
-    e.target.searchStr.value = "";
-  };
+function SearchForm({value,change}) {
+
   return (
-    <form className={s.form} onSubmit={formSubmit}>
-      <input name="searchStr" type="text"></input>
-      <button className={s.btn} type="submit">
-        search
-      </button>
-    </form>
+    <>
+      <input className={s.firstName} onChange={change} value={value} />
+      <span className="material-icons-outlined">
+search
+</span>
+      
+      
+      
+     </>
   );
 }
-
-SearchForm.propTypes = {
-  onSubmit: PropTypes.func,
-};
+ 
 
 export default SearchForm;
+
+
+
+	
+

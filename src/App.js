@@ -3,21 +3,28 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Loader from "./components/Loader/Loader.jsx";
 
-const Navigation = lazy(() => import("./components/Navigation/Navigation"));
+// const fontList = require("font-list");
+
+// fontList
+//   .getFonts()
+//   .then((fonts) => {
+//     console.log(fonts);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
 const HomePage = lazy(() => import("./components/HomePage/HomePage.jsx"));
-const MoviesPage = lazy(() => import("./components/Movie/Page/MoviesPage"));
 const MovieDetailsPage = lazy(() =>
-  import("./components/Movie/Detail/Page/MovieDetailsPage")
+  import("./components/Movie/Detail/Page/ArticleDetailsPage.jsx")
 );
 function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={<Loader />}>
-        <Navigation />
         <Switch>
           <Route path="/" exact component={HomePage} />
-          <Route path="/movies" exact component={MoviesPage} />
-          <Route path="/movies/:id" component={MovieDetailsPage} />
+          <Route path="/articles/:id" component={MovieDetailsPage} />
           <Redirect to="/" />
         </Switch>
       </Suspense>

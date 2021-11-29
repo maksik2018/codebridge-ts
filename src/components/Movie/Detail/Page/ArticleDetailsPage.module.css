@@ -1,0 +1,14 @@
+ .btn {
+  display: flex;
+
+  align-items: center;
+  padding: 5px;
+  margin: 10px;
+  position: absolute;
+  bottom: -5px;
+  left: 125px;
+  font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
