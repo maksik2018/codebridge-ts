@@ -15,13 +15,6 @@ export const getArticles = async (value) => {
   }
 };
 
-// export const searchArticles = async () => {
-//   return await axios.get(
-//     // `https://api.spaceflightnewsapi.net/v3/articles/${query}`
-//     `https://api.spaceflightnewsapi.net/v3/articles?_where[titlde]=china`
-//   );
-// };
-
 export const getArticleDetails = async (id) => {
   return await axios.get(
     `https://api.spaceflightnewsapi.net/v3/articles/${id}`

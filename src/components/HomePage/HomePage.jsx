@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getArticles } from "../../services/FetchArticles-API";
 import Loading from "../Loader/Loader";
-import { ArticleList } from "../Movie";
-// import { useLocation, useHistory } from "react-router-dom";
-// import { searchArticles } from "../../services/FetchArticles-API";
+import { ArticleList } from "../Article";
 import { SearchForm } from "../Search";
 import s from "./HomePage.module.css";
 import { ToastContainer, toast } from 'react-toastify';

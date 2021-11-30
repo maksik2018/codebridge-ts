@@ -1,6 +1,13 @@
 .wrapper {
-    margin: 50px 15px 63px 15px;
+    margin: 50px 67px 63px 67px;
+  
+    /* display: flex;
+    flex-direction: row; */
 }
+  /* box-sizing: border-box;
+
+
+} */
 
 .title {
     font-family: Montserrat;
@@ -8,6 +15,8 @@
     font-weight: 600;
     line-height: 19.5px;
     margin-bottom: 10px;
+    color: rgba(54, 54, 54, 1);
+
 }
 
 .results {

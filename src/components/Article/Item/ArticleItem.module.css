@@ -9,18 +9,21 @@
     display: block;
     width: 400px;
     height: 530px;
+      border: 1px solid rgba(234, 234, 234, 1); 
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 5px; 
 
 }
 
 .item {
- flex-basis: calc(100% / 3 - 60px);
+  width: 400px;
   margin-top: 30px; 
   margin-left: 45px;
 }
 
 .link {
   display: flex;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .overlay {
@@ -44,7 +47,8 @@
    }
 
 
-.zagolovok {
+.description {
+  display: block;
   margin-top: 20px;
 height: 45px;
 overflow: hidden;
@@ -60,9 +64,7 @@ font-family: Montserrat;
   margin-left: 26px;
   display: flex;
   align-items: center;
-  border: 1px solid rgba(234, 234, 234, 1);
-  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
+  
 
  
 }
@@ -76,6 +78,8 @@ font-family: Montserrat;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+    
   
 }
+
 
